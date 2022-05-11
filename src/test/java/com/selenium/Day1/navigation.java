@@ -73,8 +73,7 @@ public class navigation {
 
         driver.navigate().to(driver.getCurrentUrl());
         driver.get(driver.getCurrentUrl());
-        Keys sendkey = Keys.COMMAND;
-        driver.findElement(By.tagName("body")).sendKeys(sendkey.SHIFT);
+        driver.findElement(By.tagName("body")).sendKeys(Keys.SHIFT);
         
     }
 
