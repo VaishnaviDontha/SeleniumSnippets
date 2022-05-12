@@ -20,7 +20,7 @@ public class extractingInfo {
         
     }
 
-    /* @Test
+    @Test
     public void getText() {
 
         String txt = driver.findElement(By.id("logInPanelHeading")).getText();
@@ -45,7 +45,7 @@ public class extractingInfo {
         System.out.println(size.height);
         System.out.println(size.width);
         
-    } */
+    } 
 
     @Test
     public void Isenabled() {
