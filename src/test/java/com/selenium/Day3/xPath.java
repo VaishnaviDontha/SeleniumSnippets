@@ -1,39 +1,83 @@
 package com.selenium.Day3;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
 public class xPath {
-   
-    /* 
-    Two Types : 
-    1. Absolute xPath - Starts with '/' e.g: /html/head/body/div/input/
-    2. Relative XPath - Represented by '//'
+
+    /*
+     * Two Types :
+     * 1. Absolute xPath - Starts with '/' e.g: /html/head/body/div/input/
+     * 2. Relative XPath - Represented by '//'
      */
 
+    WebDriver driver;
 
-    // /html/body/div/div/div[3]/div[2]/div[2]/form/div[2]/input
-    // //input[@id='txtUsername']
+    @BeforeTest
+    public void SetUp() {
 
-    // XPath = //tagname[@Attribute=’Value’]
-            // //tagname[contains(@attribute,constantvalue)]
-// OR  XPath = //tagname[@attribute1=value1 OR @attribute2=value1]
-// AND XPath = //tagname[@attribute1=value1 AND @attribute2=value1]
-            // //tagname[text()=’Text of the Web Element’]
-            // //tagname[starts-with(@attribute,value)]
-            // //tagname[@attribute=’value’][Index Number]
-            // //tagname1[@attribute1=value1]//tagname2[@attribute2=value2]
-    
+        driver = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
+        driver.get("https://www.google.com/");
 
-    // XPath Axes
-    // //tagname[@attribute=’value’]//following::tagname
-    // //tagname[@attribute=’value’]//following-sibiling::tagname
-    
-    // //tagname[@attribute=’value’]//preceding::tagname
-    // //tagname[@attribute=’value’]//preceding-sibling::tagname
+    }
 
-    // //tagname[@attribute=’value’]//child::tagname
-    // //tagname[@attribute=’value’]//parent::tagname
+    @Test
+    public void absouluteXpath() {
+        // navigates to gmail
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/a[1]")).click();
+        driver.navigate().back();
 
-    // //tagname[@attribute=’value’]//descendants::tagname (descendants = child, grandchild nodes)
-    // //tagname[@attribute=’value’]//ancestors::tagname
+    }
+
+    @Test
+    public void relativeXpath() throws InterruptedException {
+
+        //driver.navigate().to("https://www.google.com/");
+        
+        WebElement elem = driver.findElement(By.xpath("//input[@name='q']")); // Relative XPath
+        elem.sendKeys("Selenium",Keys.ENTER);
+        Thread.sleep(5000);
+        driver.navigate().back();
+
+        driver.findElement(By.xpath("(//a[contains(@class,'MV3Tnb')])[1]")).click(); // Relative XPath with Index number
+        Thread.sleep(5000);
+        driver.navigate().back();
+
+        driver.findElement(By.xpath("//span[text()='Carbon neutral since 2007']")).click(); // Relative Xpath with Text
+        Thread.sleep(5000);
+        driver.navigate().back();
+
+        driver.findElement(By.xpath("//span[starts-with(text(),'Carbon')]")).click(); // Relative Xpath with starts-with
+        Thread.sleep(5000);
+        driver.navigate().back();
+
+        driver.findElement(By.xpath("//span[starts-with(text(),'Carbon')]")).click(); // Relative Xpath with starts-with
+        Thread.sleep(5000);
+        driver.navigate().back();
+
+        driver.findElement(By.xpath("//a[@class='pHiOh'][contains(.,'Advertising')]")).click(); // Relative Xpath with contains
+        Thread.sleep(5000);
+        driver.navigate().back();
+
+        driver.findElement(By.xpath("//div[@class='rIbAWc']/div[text()='Settings']")).click(); // Relative Xpath with Parent reference
+        Thread.sleep(5000);
+        driver.navigate().back();
+
+
+    }
+
+    @AfterTest
+    public void tearDown() {
+        driver.close();
+        
+    }
 
     
 
