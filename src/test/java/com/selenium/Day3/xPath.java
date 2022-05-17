@@ -46,7 +46,7 @@ public class xPath {
         Thread.sleep(5000);
         driver.navigate().back();
 
-        driver.findElement(By.xpath("(//a[contains(@class,'MV3Tnb')])[1]")).click(); // Relative XPath with Index number
+        driver.findElement(By.xpath("(//a[contains(@class,'MV3Tnb')])[1]")).click(); // Relative XPath with contains and Index number
         Thread.sleep(5000);
         driver.navigate().back();
 
@@ -66,11 +66,23 @@ public class xPath {
         Thread.sleep(5000);
         driver.navigate().back();
 
-        driver.findElement(By.xpath("//div[@class='rIbAWc']/div[text()='Settings']")).click(); // Relative Xpath with Parent reference
+        driver.findElement(By.xpath("//div[@class='rIbAWc']//div[text()='Settings']")).click(); // Relative Xpath with Chained 
         Thread.sleep(5000);
         driver.navigate().back();
 
+    }
 
+    @Test
+    public void xPathAxes() throws InterruptedException {
+
+        driver.findElement(By.xpath("//a[@class='pHiOh']//following::a[text()='Terms']")).click(); // Relative Xpath with Following
+        Thread.sleep(5000);
+        driver.navigate().back();
+
+        driver.findElement(By.xpath("//div[@class='rIbAWc']/div[text()='Settings']")).click(); // Relative Xpath with Parent reference
+        Thread.sleep(5000);
+        driver.navigate().back();
+        
     }
 
     @AfterTest
