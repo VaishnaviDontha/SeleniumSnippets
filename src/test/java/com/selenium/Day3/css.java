@@ -1,7 +1,9 @@
 package com.selenium.Day3;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -17,32 +19,70 @@ public class css {
 
         driver = new ChromeDriver();
         System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
-        driver.get("https://opensource-demo.orangehrmlive.com/");
+        driver.get("https://www.google.com/");
     
     }
 
     @Test
-    public void idLocator() {
+    public void cssLocators() throws InterruptedException {
 
-        // 'input' element with @id = txtUsername :: input#txtUsername
-        driver.findElement(By.cssSelector("input#txtUsername")).sendKeys("Admin");
 
-        // any element with @id = txtPassword :: #txtPassword
-        driver.findElement(By.cssSelector("#txtPassword")).sendKeys("admin123");
+        WebElement elem1 = driver.findElement(By.cssSelector(".gLFyf.gsfi"));
+        elem1.sendKeys("Selenium",Keys.ENTER);
+        Thread.sleep(5000);
+        driver.navigate().back();
+        
+        WebElement elem2 = driver.findElement(By.cssSelector("input.gLFyf.gsfi"));
+        elem2.sendKeys("Selenium",Keys.ENTER);
+        Thread.sleep(5000);
+        driver.navigate().back();
+
+
+        driver.findElement(By.cssSelector("#gbqfbb")).click();
+        Thread.sleep(5000);
+        driver.navigate().back();
+        
+        driver.findElement(By.cssSelector("input#gbqfbb")).click();
+        Thread.sleep(5000);
+        driver.navigate().back(); 
+
+
+        WebElement elem3 = driver.findElement(By.cssSelector("[name='q']"));
+        elem3.sendKeys("Selenium",Keys.ENTER);
+        Thread.sleep(5000);
+        driver.navigate().back();
+        
+        WebElement elem4 = driver.findElement(By.cssSelector("input[name='q']"));
+        elem4.sendKeys("Selenium",Keys.ENTER);
+        Thread.sleep(5000);
+        driver.navigate().back();
+
+        // Tagname/Class/ID combination with attribute
+
+        WebElement elem5 = driver.findElement(By.cssSelector("input.gLFyf.gsfi[name='q']"));
+        elem5.sendKeys("Selenium",Keys.ENTER);
+        Thread.sleep(5000);
+        driver.navigate().back();
+        
+        WebElement elem6 = driver.findElement(By.cssSelector(".gLFyf.gsfi[name='q']"));
+        elem6.sendKeys("Selenium",Keys.ENTER);
+        Thread.sleep(5000);
+        driver.navigate().back();
+
+        driver.findElement(By.cssSelector("input#gbqfbb[role='button']")).click();
+        Thread.sleep(5000);
+        driver.navigate().back();
+        
+        driver.findElement(By.cssSelector("#gbqfbb[role='button']")).click();
+        Thread.sleep(5000);
+        driver.navigate().back();
+
+
+
+
 
         
     }
 
-    @Test
-    public void classLocator() {
-
-        // 'input' element with @class = button :: input.button
-        driver.findElement(By.cssSelector("input.button")).click(); 
-        
-        // any element with @class = head :: .head
-        String txt  = driver.findElement(By.cssSelector(".head")).getText();
-        System.out.println(txt);
-        
-    }
     
 }
