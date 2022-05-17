@@ -77,6 +77,21 @@ public class css {
         Thread.sleep(5000);
         driver.navigate().back();
 
+        // Substrings math - ^ $ * contains
+
+        /* 
+            input[id^=gbqf]
+            input[id$=qfbb]
+            input[id*=qfbb]
+
+
+            a > span[class='ktLKi']
+            div span[class='ktLKi']
+            .KxwPGc.AghGtd a:nth-child(2)
+
+
+        */
+
 
 
 
