@@ -1,5 +1,5 @@
 package com.selenium.Day3;
 
-public class relativeLocators {
+public class chromeOptions {
     
 }

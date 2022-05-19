@@ -1,4 +1,4 @@
-package com.selenium.Day3;
+package com.selenium.Day2;
 
 import java.time.Duration;
 import java.util.NoSuchElementException;
