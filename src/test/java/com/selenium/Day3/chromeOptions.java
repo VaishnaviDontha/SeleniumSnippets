@@ -34,7 +34,6 @@ public class chromeOptions {
         System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
         ChromeOptions cOptions = new ChromeOptions();
         cOptions.setAcceptInsecureCerts(true);
-        cOptions.
         WebDriver driver = new ChromeDriver(cOptions);
         driver.get("https://www.cacert.org/");
 
