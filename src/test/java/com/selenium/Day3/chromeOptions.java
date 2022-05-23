@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 public class chromeOptions {
 
-    /* @Test
+    @Test
     public void setBinary() {
 
         // Generally used to perform VERSION testing ; having browser installer in a
@@ -50,23 +50,18 @@ public class chromeOptions {
         WebDriver driver = new ChromeDriver(cOptions);
         driver.get("https://www.google.com");
         
-    }*/
+    }
  
-   /*  @Test
+    @Test
     public void browserHeadless() {
 
         System.setProperty("Webdriver.chrome.driver", "./resources/chromedriver");
         ChromeOptions cOptions = new ChromeOptions();
-        // cOptions.setHeadless(true); or cOptions.addArguments("--headless");
+        cOptions.setHeadless(true); // or cOptions.addArguments("--headless");
         cOptions.addArguments("--incognito");
         cOptions.setAcceptInsecureCerts(true);
-        // cOptions.addArguments("start-maximised");
-        // cOptions.addArguments("version");
-        cOptions.addArguments("--disable-infobars");
-        // cOptions.getBrowserVersion();
-        // cOptions.getBrowserName(); 
-        // cOptions.addArguments("--headless");
 
+        cOptions.addArguments("--disable-infobars");
         DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability(ChromeOptions.CAPABILITY, cOptions);
 		cOptions.merge(capabilities);
@@ -79,7 +74,7 @@ public class chromeOptions {
         String name = cOptions.getBrowserName();
         System.out.println(name);
 
-    } */
+    } 
 
     @Test
     public void fewMoreArguments() {
@@ -88,14 +83,14 @@ public class chromeOptions {
         ChromeOptions cOptions = new ChromeOptions();
 
         // Page Load Strategy
-        // cOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
-        // cOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        // cOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
+        cOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
+        cOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+        cOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
 
         // TimeOuts
-        // cOptions.setScriptTimeout(Duration.ofMinutes(1));
-        // cOptions.setPageLoadTimeout(Duration.ofMinutes(1));
-        // cOptions.setImplicitWaitTimeout(Duration.ofMinutes(1));
+        cOptions.setScriptTimeout(Duration.ofMinutes(1));
+        cOptions.setPageLoadTimeout(Duration.ofMinutes(1));
+        cOptions.setImplicitWaitTimeout(Duration.ofMinutes(1));
 
         WebDriver driver = new ChromeDriver(cOptions);
         driver.get("https://www.google.com");
