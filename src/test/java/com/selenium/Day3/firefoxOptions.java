@@ -19,7 +19,7 @@ public class firefoxOptions {
 
         // Generally used to perform VERSION testing ; having browser installer in a
         // custom path
-        System.setProperty("webdriver.chrome.driver", "./resources/geckodriver");
+        System.setProperty("webdriver.gecko.driver", "./resources/geckodriver");
         FirefoxOptions cOptions = new FirefoxOptions();
 
         cOptions.setBinary("/Applications/Firefox.app");
@@ -30,7 +30,7 @@ public class firefoxOptions {
     @Test
     public void acceptCert() {
 
-        System.setProperty("webdriver.chrome.driver", "./resources/geckodriver");
+        System.setProperty("webdriver.gecko.driver", "./resources/geckodriver");
         FirefoxOptions cOptions = new FirefoxOptions();
         cOptions.setAcceptInsecureCerts(true);
         driver = new FirefoxDriver(cOptions);
@@ -42,7 +42,7 @@ public class firefoxOptions {
     @Test
     public void arguments() {
 
-        System.setProperty("webdriver.chrome.driver", "./resources/geckodriver");
+        System.setProperty("webdriver.gecko.driver", "./resources/geckodriver");
         FirefoxOptions cOptions = new FirefoxOptions();
         cOptions.addArguments("--disable-infobars");
         driver = new FirefoxDriver(cOptions);
@@ -53,7 +53,7 @@ public class firefoxOptions {
     @Test
     public void browserHeadless() {
 
-        System.setProperty("Webdriver.chrome.driver", "./resources/geckodriver");
+        System.setProperty("Webdriver.gecko.driver", "./resources/geckodriver");
         FirefoxOptions cOptions = new FirefoxOptions();
         cOptions.setHeadless(true); // or cOptions.addArguments("--headless");
         cOptions.addArguments("--incognito");
@@ -77,7 +77,7 @@ public class firefoxOptions {
     @Test
     public void fewMoreArguments() {
 
-        System.setProperty("webdriver.chrome.driver", "./resources/geckodriver");
+        System.setProperty("webdriver.gecko.driver", "./resources/geckodriver");
         FirefoxOptions cOptions = new FirefoxOptions();
 
         // Page Load Strategy
