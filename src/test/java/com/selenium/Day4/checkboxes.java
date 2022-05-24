@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -21,7 +22,7 @@ public class checkboxes {
         System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
 
     }
-/* 
+
     @Test
     public void singleDropdown() {
 
@@ -31,21 +32,34 @@ public class checkboxes {
         // dp.selectByValue("2");
         // dp.selectByIndex(1);
         dp.selectByVisibleText("Option 2");
-        
-    } */
+
+    }
 
     @Test
     public void multipleDropdown() {
-        driver.get("https://www.spirit.com/");
+        driver.get("https://chercher.tech/practice/dropdowns1");
+       
         // driver.switchTo().alert().dismiss();
-
+        
         driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(1));
+        WebElement dropdownElement = driver.findElement(By.xpath("//select[@id='second']"));
 
-        
+        Select dropdown = new Select(dropdownElement);
+    
+        // dropdown.selectByValue("donut");
+        // dropdown.selectByValue("burger");  
+        // dropdown.selectByIndex(1);
+        // dropdown.selectByIndex(3);  
 
+        dropdown.selectByVisibleText("Donut");
+        dropdown.selectByVisibleText("Burger");
+    }
 
+    @AfterTest
+    public void tearDown() {
 
-        
+        driver.quit();
+
     }
 
 }
