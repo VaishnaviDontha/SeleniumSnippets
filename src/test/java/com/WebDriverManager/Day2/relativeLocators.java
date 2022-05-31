@@ -25,7 +25,7 @@ public class relativeLocators {
     }
 
     @Test
-    public void relativeLocators() {
+    public void relativeLocator() {
 
         // driver.findElement(By.cssSelector("a[href='/login']")).click();
         driver.findElement(RelativeLocator.with(By.xpath("//a[@href='/login']")).below(By.cssSelector("a[href='/forgot_password']"))).click();
