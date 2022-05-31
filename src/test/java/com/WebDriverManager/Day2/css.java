@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class css {
 
     // Locators w.r.t the CSS selectors
@@ -17,8 +19,10 @@ public class css {
     @BeforeTest
     public void BeforeTest() {
 
+        WebDriverManager.chromedriver().setup();
+
         driver = new ChromeDriver();
-        System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
+        // System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
         driver.get("https://www.google.com/");
     
     }
