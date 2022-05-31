@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -74,6 +75,13 @@ public class navigation {
         driver.navigate().to(driver.getCurrentUrl());
         driver.get(driver.getCurrentUrl());
         driver.findElement(By.tagName("body")).sendKeys(Keys.SHIFT);
+        
+    }
+
+    @AfterTest
+    public void tearDown() {
+
+        driver.close();
         
     }
 

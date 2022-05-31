@@ -3,6 +3,7 @@ package com.selenium.Day1;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -41,6 +42,13 @@ public class locatorsSE {
         System.out.println(driver.findElement(By.xpath("//input[@id='MP_link']")).getText());
         System.out.println(driver.findElement(By.tagName("body")).getText());
         System.out.println(driver.findElement(By.className("panelTrigger")).getText());
+        
+    }
+
+    @AfterTest
+    public void tearDown() {
+
+        driver.quit();
         
     }
 

@@ -100,6 +100,8 @@ public class firefoxOptions {
     public void TearDown() {
 
         driver.quit();
+
+        // driver.close();
         
     }
 

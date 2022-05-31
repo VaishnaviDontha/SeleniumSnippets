@@ -6,6 +6,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 public class launchBrowser {
@@ -52,6 +53,13 @@ public class launchBrowser {
         driver = new SafariDriver();
         driver.get("https://opensource-demo.orangehrmlive.com/");
 
+    }
+
+    @AfterTest
+    public void tearDown() {
+
+        driver.close();
+        
     }
 
 }

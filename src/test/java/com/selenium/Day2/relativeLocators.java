@@ -45,6 +45,8 @@ public class relativeLocators {
    @Test
     public void TearDown() {
         driver.quit();
+
+        // driver.close();
         
     }
     

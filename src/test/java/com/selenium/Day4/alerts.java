@@ -55,6 +55,8 @@ public class alerts {
     @AfterTest
     public void tearDown() {
         driver.quit();
+
+        // driver.close();
         
     }
     

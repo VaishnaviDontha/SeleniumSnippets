@@ -33,6 +33,8 @@ public class extractingURL {
     @AfterTest
     public void tearDown() {
         driver.quit();
+
+        // driver.close();
         
     }
 }

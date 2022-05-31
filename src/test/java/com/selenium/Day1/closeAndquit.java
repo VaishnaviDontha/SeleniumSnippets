@@ -35,6 +35,7 @@ public class closeAndquit {
     @Test
     public void QuitBrowser() {
         driver.quit();
+        // driver.close();
         
     }
     

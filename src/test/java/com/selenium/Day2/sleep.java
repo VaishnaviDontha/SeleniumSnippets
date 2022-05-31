@@ -34,7 +34,9 @@ public class sleep {
     @AfterTest
     public void tearDown() {
 
-        driver.close();
+        driver.quit();
+
+        // driver.close();
         
     }
 }

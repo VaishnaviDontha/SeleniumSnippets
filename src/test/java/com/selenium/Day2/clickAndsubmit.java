@@ -50,6 +50,8 @@ public class clickAndsubmit {
     public void tearDown() {
         driver.findElement(By.xpath("//a[@class='button secondary radius']")).click();
         driver.quit();
+
+        // driver.close();
         
     }
 

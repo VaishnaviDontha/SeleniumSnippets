@@ -56,6 +56,8 @@ public class browserMaxMin {
 
         driver.quit();
 
+        // driver.close();
+
     }
 
 }

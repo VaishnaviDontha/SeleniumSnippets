@@ -42,7 +42,9 @@ public class headlessBrowsers {
         WebDriver driver = new HtmlUnitDriver();
         driver.get("https://the-internet.herokuapp.com/");
         System.out.println(driver.getTitle());
-        driver.close();
+        // driver.close();
+
+        driver.quit();
 
     }
 

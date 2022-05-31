@@ -108,7 +108,9 @@ public class waits {
 
     @AfterTest
     public void TearDown() {
-        driver.close();
+        // driver.close();
+
+        driver.quit();
         
     }
 

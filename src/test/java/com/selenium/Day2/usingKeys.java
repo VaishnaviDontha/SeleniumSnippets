@@ -67,6 +67,8 @@ public class usingKeys {
     public void tearDown() {
 
         driver.quit();
+
+        // driver.close();
         
     } 
         
