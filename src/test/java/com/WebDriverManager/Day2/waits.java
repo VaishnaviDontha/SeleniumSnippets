@@ -17,6 +17,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class waits {
 
     WebDriver driver;
@@ -24,8 +26,10 @@ public class waits {
     @BeforeTest
     public void SetUp() {
 
+        WebDriverManager.chromedriver().setup();
+
         driver = new ChromeDriver();
-        System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
+        // System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
         driver.get("https://the-internet.herokuapp.com/");
     }
 
