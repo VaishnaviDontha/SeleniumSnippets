@@ -24,7 +24,7 @@ public class launchBrowser {
         WebDriverManager.chromedriver().setup();
 
         driver = new ChromeDriver();
-        System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
+        // System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
         driver.get("https://opensource-demo.orangehrmlive.com/");
     }
 
@@ -34,7 +34,7 @@ public class launchBrowser {
         WebDriverManager.firefoxdriver().setup();
 
         driver = new FirefoxDriver();
-        System.setProperty("webdriver.gecko.driver", "./resources/geckodriver");
+        // System.setProperty("webdriver.gecko.driver", "./resources/geckodriver");
         driver.get("https://opensource-demo.orangehrmlive.com/");
 
     }
@@ -45,7 +45,7 @@ public class launchBrowser {
         WebDriverManager.edgedriver().setup();
 
         driver = new EdgeDriver();
-        System.setProperty("webdriver.edge.driver", "./resources/msedgedriver");
+        // System.setProperty("webdriver.edge.driver", "./resources/msedgedriver");
         driver.get("https://opensource-demo.orangehrmlive.com/");
 
     }
