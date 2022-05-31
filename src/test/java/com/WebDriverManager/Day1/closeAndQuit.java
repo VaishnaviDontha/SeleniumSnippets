@@ -16,7 +16,7 @@ public class closeAndQuit {
         WebDriverManager.chromedriver().setup();
 
         driver = new ChromeDriver();
-        System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
+        // System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
         driver.get("https://opensource-demo.orangehrmlive.com/");
 
         // driver.close();

@@ -7,6 +7,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class browserMaxMin {
 
     private WebDriver driver;
@@ -14,8 +16,10 @@ public class browserMaxMin {
     @BeforeTest
     public void SetUp() {
 
+        WebDriverManager.chromedriver().setup();
+
         driver = new ChromeDriver();
-        System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
+        // System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
         driver.get("https://opensource-demo.orangehrmlive.com/");
 
     }
@@ -24,6 +28,7 @@ public class browserMaxMin {
     public void MaximizeBrowser() {
 
         driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
 
     }
 

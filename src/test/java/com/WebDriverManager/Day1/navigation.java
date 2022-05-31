@@ -10,6 +10,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class navigation {
 
     /*
@@ -27,8 +29,11 @@ public class navigation {
 
     @BeforeTest
     public void SetUp() {
+
+        WebDriverManager.chromedriver().setup();
+
         driver = new ChromeDriver();
-        System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
+        // System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
         driver.get("https://opensource-demo.orangehrmlive.com/");
     }
 
