@@ -23,7 +23,9 @@ public class uploadFile {
     }
 
     @Test
-    public void uploaderSendKeys() throws InterruptedException {
+    public void uploaderSendKeys(){
+
+        // Via Local Infrastructure
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		WebElement addFile = driver.findElement(By.xpath(".//input[@type='file']"));
