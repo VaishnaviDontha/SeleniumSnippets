@@ -12,14 +12,18 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class chromeOptions {
 
     @Test
     public void setBinary() {
 
+        
+
         // Generally used to perform VERSION testing ; having browser installer in a
         // custom path
-        System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
+        // System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
         ChromeOptions cOptions = new ChromeOptions();
 
         // cOptions.setBinary("/Applications/Google Chrome.app");
@@ -32,10 +36,12 @@ public class chromeOptions {
     @Test
     public void acceptCert() {
 
-        System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
+        WebDriver driver = new ChromeDriver();
+        WebDriverManager.chromedriver().setup();
+
         ChromeOptions cOptions = new ChromeOptions();
         cOptions.setAcceptInsecureCerts(true);
-        WebDriver driver = new ChromeDriver(cOptions);
+        
         driver.get("https://www.cacert.org/");
 
     }
@@ -44,10 +50,13 @@ public class chromeOptions {
     @Test
     public void arguments() {
 
-        System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
+        WebDriver driver = new ChromeDriver();
+        WebDriverManager.chromedriver().setup();
+
+
         ChromeOptions cOptions = new ChromeOptions();
         cOptions.addArguments("--disable-infobars");
-        WebDriver driver = new ChromeDriver(cOptions);
+        driver = new ChromeDriver(cOptions);
         driver.get("https://www.google.com");
         
     }
@@ -55,7 +64,10 @@ public class chromeOptions {
     @Test
     public void browserHeadless() {
 
-        System.setProperty("Webdriver.chrome.driver", "./resources/chromedriver");
+        WebDriver driver;
+        WebDriverManager.chromedriver().setup();
+        
+
         ChromeOptions cOptions = new ChromeOptions();
         cOptions.setHeadless(true); // or cOptions.addArguments("--headless");
         cOptions.addArguments("--incognito");
@@ -65,7 +77,7 @@ public class chromeOptions {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability(ChromeOptions.CAPABILITY, cOptions);
 		cOptions.merge(capabilities);
-		ChromeDriver driver = new ChromeDriver(cOptions);
+		driver = new ChromeDriver(cOptions);
         driver.get("https://www.google.com");
 
         String ver = cOptions.getBrowserVersion();
