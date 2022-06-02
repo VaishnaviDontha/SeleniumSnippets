@@ -2,6 +2,7 @@ package com.selenium.Day4;
 
 import java.time.Duration;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,7 +26,12 @@ public class pop_ups {
     @Test
     public void auth() {
 
+        // Auth Pop-Up
         driver.get("https://admin:admin@the-internet.herokuapp.com/digest_auth");
+        String eText = driver.findElement(By.cssSelector("div[id='content'] p")).getText();
+        System.out.println(eText);
+
+        driver.navigate().back();
         
     }
 
