@@ -38,7 +38,7 @@ public class printPageChrome {
     @Test
     public void printPage() throws IOException {
 
-        Path printPage = Paths.get("/Users/harishkasam/Documents/Vaishnavi/Practise-Repo/snippets/resources/PrintPageChrome.pdf");
+        Path printPage = Paths.get("./resources/PrintPageChrome.pdf");
         Pdf print = ((PrintsPage) driver).print(new PrintOptions());
         Files.write(printPage, OutputType.BYTES.convertFromBase64Png(print.getContent()));
         driver.quit();
