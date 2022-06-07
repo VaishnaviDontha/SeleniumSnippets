@@ -1,4 +1,4 @@
-package com.selenium.Day5;
+package com.WebDriverManager.Day5;
 
 public class launchingInNewWindow {
     
