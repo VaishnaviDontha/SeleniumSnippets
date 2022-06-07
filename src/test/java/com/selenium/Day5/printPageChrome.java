@@ -1,11 +1,16 @@
 package com.selenium.Day5;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Pdf;
 import org.openqa.selenium.PrintsPage;
@@ -38,9 +43,20 @@ public class printPageChrome {
     @Test
     public void printPage() throws IOException {
 
-        Path printPage = Paths.get("./resources/PrintPageChrome.pdf");
+        // Create object of SimpleDateFormat class and decide the format
+        DateFormat dateFormat = new SimpleDateFormat("MM:dd:yyyy_HH:mm:ss");
+        
+        //get current date time with Date()
+        Date date = new Date();
+        
+        // Now format the date
+        String date1= dateFormat.format(date);
+
+        // Appending timestamp to the path
+        Path printPage = Paths.get("./resources/PrintPageChrome_"+date1+".pdf");
         Pdf print = ((PrintsPage) driver).print(new PrintOptions());
-        Files.write(printPage, OutputType.BYTES.convertFromBase64Png(print.getContent()));
+        Files.write(printPage, OutputType.BYTES.convertFromBase64Png(print.getContent()));        
+                
         driver.quit();
         
     }
