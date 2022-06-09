@@ -27,7 +27,7 @@ public class switchTabs {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         
-        driver.get("https://the-internet.herokuapp.com");
+        driver.get("https://the-internet.herokuapp.com/");
 
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
