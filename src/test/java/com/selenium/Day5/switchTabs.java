@@ -91,7 +91,7 @@ public class switchTabs {
 
 
 
-    @Test(enabled = false)
+    @Test
     public void openingLinkInNewWindow() throws InterruptedException {
 
         WebElement element = driver.findElement(By.cssSelector("a[href='/abtest']"));
@@ -105,7 +105,7 @@ public class switchTabs {
     }
 
 
-    @Test (enabled = false)
+    @Test 
     public void openingLinkInNewTab() throws InterruptedException {
 
         WebElement element = driver.findElement(By.cssSelector("a[href='/abtest']"));
@@ -118,7 +118,7 @@ public class switchTabs {
         
     }
 
-    @Test (enabled = false)
+    @Test
     public void otherWaysofSwitchingTabs() {
 
         WebElement element = driver.findElement(By.cssSelector("a[href='/abtest']"));
