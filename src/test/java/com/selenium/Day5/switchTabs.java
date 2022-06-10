@@ -89,35 +89,6 @@ public class switchTabs {
 
     }
 
-
-
-    @Test
-    public void openingLinkInNewWindow() throws InterruptedException {
-
-        WebElement element = driver.findElement(By.cssSelector("a[href='/abtest']"));
-        
-        Actions act = new Actions(driver);
-        act.keyDown(Keys.SHIFT)
-            .click(element)
-            .build()
-            .perform();
-        
-    }
-
-
-    @Test 
-    public void openingLinkInNewTab() throws InterruptedException {
-
-        WebElement element = driver.findElement(By.cssSelector("a[href='/abtest']"));
-        
-        Actions act = new Actions(driver);
-        act.keyDown(Keys.COMMAND)
-            .click(element)
-            .build()
-            .perform();
-        
-    }
-
     @Test
     public void otherWaysofSwitchingTabs() {
 
