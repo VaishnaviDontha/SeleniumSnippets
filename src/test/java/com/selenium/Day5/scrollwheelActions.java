@@ -2,9 +2,14 @@ package com.selenium.Day5;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 
 public class scrollwheelActions {
@@ -16,13 +21,29 @@ public class scrollwheelActions {
 
         driver = new ChromeDriver();
         System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
-        driver.get("https://the-internet.herokuapp.com/");
+        driver.get("https://the-internet.herokuapp.com/large");
 
         driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(1));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 
     }
 
+    @Test
+    public void scrollToAElement() {
+
+        WebElement elem = driver.findElement(By.xpath("//div[text()='50.2']"));
+        new Actions(driver).scrollToElement(elem).perform();
+
+        System.out.println(elem.getText());
+        
+    }
+
+    @AfterTest
+    public void tearDown() {
+
+        driver.quit();
+        
+    }
 
     
 }
