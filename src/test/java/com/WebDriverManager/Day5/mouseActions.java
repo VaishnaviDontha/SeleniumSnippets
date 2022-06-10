@@ -151,6 +151,25 @@ public class mouseActions {
         
         
     }
+
+    @Test
+    public void slideViaMouseActions() throws InterruptedException {
+
+        driver.get("https://the-internet.herokuapp.com/horizontal_slider");
+        
+        WebElement elem = driver.findElement(By.cssSelector("input[type='range']"));
+
+        int xcoordinate = elem.getLocation().getX();
+        int width = elem.getSize().getWidth();
+
+
+        System.out.println(xcoordinate);
+        System.out.println(width);
+        new Actions(driver).click()
+                            .dragAndDropBy(elem, xcoordinate+width, 0 )
+                            .build()
+                            .perform();
+    }
     
 
     @AfterTest
