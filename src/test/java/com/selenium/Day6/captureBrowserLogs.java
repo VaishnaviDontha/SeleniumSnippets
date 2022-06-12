@@ -37,6 +37,14 @@ public class captureBrowserLogs {
         
     }
 
+    public void withoutDevTools() {
+        
+    }
+
+    public void otherWays() {
+        
+    }
+
     @AfterTest
     public void tearDown() {
 
