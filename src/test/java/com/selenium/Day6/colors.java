@@ -36,7 +36,7 @@ public class colors {
         String loginButton = Color.fromString(driver.findElement(By.id("login")).getCssValue("color")).asHex();
 
 
-        Assert.assertEquals("#222222", loginButton);
+        Assert.assertEquals(loginButton, "#222222");
         
     }
 
