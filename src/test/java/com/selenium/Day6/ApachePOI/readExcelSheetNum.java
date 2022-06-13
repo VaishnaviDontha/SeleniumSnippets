@@ -27,29 +27,44 @@ public class readExcelSheetNum {
 
             XSSFWorkbook wb = new XSSFWorkbook(inputStream);
             XSSFSheet sheet = wb.getSheet("Sheet1");
-            Row row = sheet.getRow(0);
-            Cell cell = row.getCell(0);
 
-            System.out.println(cell);
-            System.out.println(sheet.getRow(0).getCell(0));
+            int lastRow = sheet.getLastRowNum();
+
+            for(int row =0;row<= lastRow; row++){
+
+                for (int col = 0; col <= lastRow; col++) {
+
+                    Row r = sheet.getRow(row);
+                    Cell c = r.getCell(col);
+
+                    System.out.println(sheet.getRow(row).getCell(col));
+                }
 
             wb.close();
 
         }
+    }
 
         else if (fileExtensionName.equals(".xls")) {
 
             HSSFWorkbook wb = new HSSFWorkbook(inputStream);
-            HSSFSheet sheet = wb.getSheetAt(0);
+            HSSFSheet sheet = wb.getSheet("Username");
 
-            Row row = sheet.getRow(0);
-            Cell cell = row.getCell(0);
+            int lastRow = sheet.getLastRowNum();
 
-            System.out.println(cell);
-            System.out.println(sheet.getRow(0).getCell(0));
+            for(int row =0;row<= lastRow; row++){
+
+                for (int col = 0; col <= lastRow; col++) {
+
+                    Row r = sheet.getRow(row);
+                    Cell c = r.getCell(col);
+
+                    System.out.println(sheet.getRow(row).getCell(col));
+                }
+            
+            }
 
             wb.close();
         }
-
     }
 }
