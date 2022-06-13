@@ -25,6 +25,7 @@ public class creatingSheets {
         System.out.println(numOfSheets);
 
         wb.write(file);
+        wb.close();
         
     }
     
