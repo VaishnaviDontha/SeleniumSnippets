@@ -1,6 +1,5 @@
 package com.selenium.Day6.ApachePOI;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -11,16 +10,6 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class readExcel {
-
-    // WebDriver driver;
-
-    // @BeforeTest
-    // public void setUp() {
-
-    //     driver = new ChromeDriver();
-    //     System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
-        
-    // }
 
     @Test
     public void readExcelData() throws IOException {
