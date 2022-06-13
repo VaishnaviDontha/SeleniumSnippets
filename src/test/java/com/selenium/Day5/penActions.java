@@ -29,7 +29,7 @@ public class penActions {
     }
 
     @Test
-    public void penActions() {
+    public void penAction() {
 
         WebElement pointerArea = driver.findElement(By.xpath("//a[text()='A/B Testing']"));
         
