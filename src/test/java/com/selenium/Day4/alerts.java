@@ -22,7 +22,7 @@ public class alerts {
     }
 
     @Test
-    public void alerts() {
+    public void alert() {
 
         driver.findElement(By.xpath("//button[text()='Click for JS Alert']")).click();
         driver.switchTo().alert().accept();
