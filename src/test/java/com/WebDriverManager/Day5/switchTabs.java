@@ -90,5 +90,12 @@ public class switchTabs {
         ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
         driver.switchTo().window(tabs.get(2));
 
-    } 
+    }
+    
+    @AfterTest
+    public void tearDown() {
+
+        driver.quit();
+        
+    }
 }
