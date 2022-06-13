@@ -14,7 +14,7 @@ public class readExcel {
     @Test
     public void readExcelData() throws IOException {
 
-        FileInputStream fis = new FileInputStream("./resources/data.xlsx");
+        FileInputStream fis = new FileInputStream("./resources/data1.xlsx");
         
         XSSFWorkbook wb = new XSSFWorkbook(fis);
 
@@ -39,8 +39,9 @@ public class readExcel {
         Cell cell3 = row3.getCell(1);
         System.out.println(sheet.getRow(1).getCell(1));
         System.out.println(cell3);
-        
+
         wb.close();
+        
     }
     
 }
