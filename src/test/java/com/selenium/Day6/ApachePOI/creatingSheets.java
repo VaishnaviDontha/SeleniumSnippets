@@ -1,11 +1,17 @@
 package com.selenium.Day6.ApachePOI;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.Test;
 
@@ -14,18 +20,40 @@ public class creatingSheets {
     @Test
     public void createSheet() throws IOException {
 
-        Workbook wb = new XSSFWorkbook();
-        OutputStream file = new FileOutputStream("./resources/data.xlsx");
+        String path = "/Users/harishkasam/Documents/Vaishnavi/Practise-Repo/snippets/resources/data.xls";
+        OutputStream outputStream = new FileOutputStream(path);
 
-        Sheet sheetOne = wb.createSheet("Username");
-        Sheet sheetTwo = wb.createSheet("Password");
-        Sheet sheetThree = wb.createSheet("Notes");
+        String fileExtensionName = path.substring(path.indexOf("."));
+        System.out.println(fileExtensionName);
 
-        int numOfSheets = wb.getNumberOfSheets();
-        System.out.println(numOfSheets);
+        if (fileExtensionName.equals(".xlsx")) {
 
-        wb.write(file);
-        wb.close();
+            XSSFWorkbook wb = new XSSFWorkbook();
+            Sheet sheetOne = wb.createSheet("Username");
+            Sheet sheetTwo = wb.createSheet("Password");
+            Sheet sheetThree = wb.createSheet("Notes");
+
+            int numOfSheets = wb.getNumberOfSheets();
+            System.out.println(numOfSheets);
+
+            wb.write(outputStream);
+            wb.close();
+
+        }
+
+        else if (fileExtensionName.equals(".xls")) {
+
+            HSSFWorkbook wb = new HSSFWorkbook();
+            Sheet sheetOne = wb.createSheet("Username");
+            Sheet sheetTwo = wb.createSheet("Password");
+            Sheet sheetThree = wb.createSheet("Notes");
+
+            int numOfSheets = wb.getNumberOfSheets();
+            System.out.println(numOfSheets);
+
+            wb.write(outputStream);
+            wb.close();
+        }
         
     }
     
