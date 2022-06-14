@@ -23,6 +23,7 @@ public class creatingSheets {
         if (fileExtensionName.equals(".xlsx")) {
 
             XSSFWorkbook wb = new XSSFWorkbook();
+
             Sheet sheetOne = wb.createSheet("Username");
             Sheet sheetTwo = wb.createSheet("Password");
             Sheet sheetThree = wb.createSheet("Notes");
@@ -38,6 +39,7 @@ public class creatingSheets {
         else if (fileExtensionName.equals(".xls")) {
 
             HSSFWorkbook wb = new HSSFWorkbook();
+
             Sheet sheetOne = wb.createSheet("Username");
             Sheet sheetTwo = wb.createSheet("Password");
             Sheet sheetThree = wb.createSheet("Notes");
