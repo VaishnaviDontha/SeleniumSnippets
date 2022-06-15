@@ -2,7 +2,6 @@ package com.selenium.Day3;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.*;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
