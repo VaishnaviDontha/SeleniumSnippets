@@ -24,7 +24,10 @@ public class log4J {
 
     public void log4j() {
 
+        
+
         driver.findElement(By.cssSelector("input[type='text']")).sendKeys("tomsmith");
+        
         driver.findElement(By.xpath("//input[type='password']")).sendKeys("SuperSecretPassword!");
         driver.findElement(By.cssSelector("button[type='submit']")).submit();
 

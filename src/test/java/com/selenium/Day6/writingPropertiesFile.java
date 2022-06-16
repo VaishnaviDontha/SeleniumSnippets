@@ -1,6 +1,5 @@
 package com.selenium.Day6;
 
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -19,7 +18,7 @@ public class writingPropertiesFile {
         prop.setProperty("User1", "Client");
         prop.setProperty("Environment", "Test");
 
-        prop.store(fos, " ");
+        prop.store(fos, "Comments");
 
     }
 
@@ -33,7 +32,7 @@ public class writingPropertiesFile {
         prop.setProperty("User1", "Client");
         prop.setProperty("Environment", "Test");
 
-        prop.store(fos, " ");
+        prop.store(fos, "Comments");
         
         
     }
