@@ -8,6 +8,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class alerts {
 
     WebDriver driver;
@@ -15,8 +17,8 @@ public class alerts {
     @BeforeTest
     public void setUp() {
 
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
         
     }
