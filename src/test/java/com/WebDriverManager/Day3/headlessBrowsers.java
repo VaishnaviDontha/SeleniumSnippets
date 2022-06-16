@@ -8,12 +8,14 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class headlessBrowsers {
 
     @Test
     public void Chome() {
 
-        System.setProperty("webdriver.chrome.driver", "./resources/chromedriver");
+        WebDriverManager.chromedriver().setup();
         ChromeOptions cOptions = new ChromeOptions();
         cOptions.setHeadless(true);
         WebDriver driver = new ChromeDriver(cOptions);
