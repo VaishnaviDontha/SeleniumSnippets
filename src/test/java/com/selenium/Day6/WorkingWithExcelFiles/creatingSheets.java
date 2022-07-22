@@ -14,7 +14,7 @@ public class creatingSheets {
     @Test
     public void createSheet() throws IOException {
 
-        String path = "/data.xls";
+        String path = "./data.xls";
         OutputStream outputStream = new FileOutputStream(path);
 
         String fileExtensionName = path.substring(path.indexOf("."));
