@@ -17,7 +17,7 @@ public class writeExcelSheetName {
     @Test
     public void writeDataExcel() throws IOException {
 
-        String path = "/Users/harishkasam/Documents/Vaishnavi/Practise-Repo/snippets/resources/Tests.xlsx";
+        String path = "./resources/Tests.xlsx";
 
         FileInputStream inputStream = new FileInputStream(path);
 
