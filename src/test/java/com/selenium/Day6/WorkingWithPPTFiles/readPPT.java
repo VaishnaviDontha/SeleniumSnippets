@@ -26,7 +26,7 @@ public class readPPT {
     @Test
     public void createPPT() throws IOException {
 
-        String path = "/Users/harishkasam/Documents/Vaishnavi/Practise-Repo/snippets/resources/Documents/data.pptx";
+        String path = "./resources/Documents/data.pptx";
         OutputStream outputStream = new FileOutputStream(path);
 
         String fileExtensionName = path.substring(path.indexOf("."));
