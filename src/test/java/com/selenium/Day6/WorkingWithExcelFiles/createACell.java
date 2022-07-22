@@ -17,7 +17,7 @@ public class createACell {
     @Test
     public void createAndWriteValueToACell() throws IOException {
         
-        String path = "/Users/harishkasam/Documents/Vaishnavi/Practise-Repo/snippets/resources/Tests.xls";
+        String path = "/Tests.xls";
 
         FileInputStream inputStream = new FileInputStream(path);
 
