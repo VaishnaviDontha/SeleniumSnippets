@@ -16,7 +16,7 @@ public class readExcelSheetNum {
     @Test
     public void readingExcel() throws IOException {
 
-        String path = "/Users/harishkasam/Documents/Vaishnavi/Practise-Repo/snippets/resources/Tests.xls";
+        String path = "./resources/Tests.xls";
 
         FileInputStream inputStream = new FileInputStream(path);
 
