@@ -16,7 +16,7 @@ public class retrievingValues {
     @Test
     public void retrieveValues() throws IOException {
         
-        String path = "/Tests.xls";
+        String path = "./resources/Tests.xls";
 
         FileInputStream inputStream = new FileInputStream(path);
 
